@@ -1,0 +1,14 @@
+# Local logs
+*.log
+
+# Backup artifacts
+*.tgz
+*.tar
+*.sql
+*.sql.gz
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+
