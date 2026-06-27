@@ -10,6 +10,14 @@ This repository contains a simple backup strategy that is easy to understand, ea
 
 The scripts are designed for systems where the goal is to protect user data and databases, not the full server stack.
 
+## Quick Start
+
+1. Clone the repository on the source server.
+2. Edit the variables at the top of each script.
+3. Make sure SSH key access to the remote server is configured.
+4. Test the scripts manually once.
+5. Add the cron entries.
+
 ## What Is Included
 
 - `/home/username` directories
@@ -100,7 +108,17 @@ The scripts are also prepared to fall back to the local hostname if needed.
 - `mysqldump` or `mariadb-dump`
 - `mysql` or `mariadb`
 
-The SSH key must already be installed on the remote server so the scripts can run without a password prompt.
+## SSH Setup
+
+The backup scripts expect passwordless SSH access to the remote server.
+
+If the key is not installed yet, generate one on the source server and copy it with:
+
+```bash
+ssh-copy-id -p PORT USER@SERVER
+```
+
+After that, the scripts can connect without prompting for a password.
 
 ## Cron Setup
 
@@ -137,4 +155,4 @@ MIT
 
 ## Author
 
-`idhdudu`
+Repository maintainer
